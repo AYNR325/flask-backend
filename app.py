@@ -18,8 +18,11 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 DEFAULT_LANGUAGE = "en"
 
-# ✅ Correct Tesseract Path Configuration
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# # ✅ Correct Tesseract Path Configuration
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# Force the correct Tesseract path for Linux (Render)
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 def preprocess_image(image):
     """Preprocess image to improve OCR accuracy."""
