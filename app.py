@@ -1,3 +1,4 @@
+import os
 import cv2
 import numpy as np
 import google.generativeai as genai
@@ -104,5 +105,8 @@ def process_image():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  # Default to 8080 if PORT is not set
+    app.run(host="0.0.0.0", port=port, debug=True)
